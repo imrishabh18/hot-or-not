@@ -7,6 +7,7 @@ const app = express();
 
 app.use(cors());
 app.use(bodyParser.json());
+app.use(express.static(path.join(__dirname, "client", "build")));
 
 mongoose
   .connect('mongodb+srv://imrishabh18:1234@hotornot-xmw8q.mongodb.net/test?retryWrites=true&w=majorityt', { useNewUrlParser: true })
