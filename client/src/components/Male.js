@@ -23,6 +23,8 @@ import a20 from "../images/males/sparsh.jpg";
 import a21 from "../images/males/sujay.jpg";
 import a22 from "../images/males/varun.jpg";
 import a23 from "../images/males/nikhil.jpg";
+import a24 from "../images/males/bharat.jpg"
+
 import { faFireAlt, faTimes } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { createMuiTheme, MuiThemeProvider } from "@material-ui/core/styles";
@@ -39,7 +41,7 @@ const theme = createMuiTheme({
 });
 
 const axiosInstance = axios.create({
-baseURL: "https://hot-or-not.herokuapp.com"
+baseURL: "https://hot-or-not1.herokuapp.com"
 });
 
 class Male extends React.Component {
@@ -184,25 +186,30 @@ class Male extends React.Component {
           gender: 1,
           hot: 0,
           not: 0
-        },
+        },{
+          id: a24,
+          gender: 1,
+          hot: 0,
+          not: 0
+        }
       ]
     };
   }
-  componentDidMount(){
-    this.getData();
-  }
-  getData(){
-    axiosInstance.get('/horn')
-      .then(res => {
-        var len = res.data.length-1;
-        while(res.data[len].arr[0].gender !== 1){
-            len--;
-        }
-        this.setState({ imgList: res.data[len].arr})
-        console.log(res.data[len].arr[0].gender)
-      })
-      .catch(err => console.error(err))
-  }
+  // componentDidMount(){
+  //   this.getData();
+  // }
+  // getData(){
+  //   axiosInstance.get('/horn')
+  //     .then(res => {
+  //       var len = res.data.length-1;
+  //       while(res.data[len].arr[0].gender !== 1){
+  //           len--;
+  //       }
+  //       this.setState({ imgList: res.data[len].arr})
+  //       console.log(res.data[len].arr[0].gender)
+  //     })
+  //     .catch(err => console.error(err))
+  // }
   hot() {
     //Changing it into json to setState for nested object
     let imageList = JSON.parse(JSON.stringify(this.state.imgList));

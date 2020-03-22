@@ -19,6 +19,8 @@ import a15 from "../images/females/shifaa.jpg";
 import a16 from "../images/females/sukrutha.jpg";
 import a17 from "../images/females/supritha.jpg";
 import a18 from "../images/females/yash.jpg";
+import a14 from "../images/females/bhumika_r.jpg";
+
 import { faFireAlt, faTimes } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { createMuiTheme, MuiThemeProvider } from "@material-ui/core/styles";
@@ -121,12 +123,12 @@ class Female extends React.Component {
           hot: 0,
           not: 0
         },
-        // {
-        //   id: a14,
-        //   gender: 0,
-        //   hot: 0,
-        //   not: 0
-        // },
+        {
+          id: a14,
+          gender: 0,
+          hot: 0,
+          not: 0
+        },
         {
           id: a15,
           gender: 0,
@@ -154,22 +156,22 @@ class Female extends React.Component {
       ]
     };
   }
-  componentDidMount() {
-    this.getData();
-  }
-  getData() {
-    axiosInstance
-      .get("/horn")
-      .then(res => {
-        var len = res.data.length - 1;
-        while (res.data[len].arr[0].gender !== 0) {
-          len--;
-        }
-        this.setState({ imgList: res.data[len].arr });
-        console.log(res.data[len].arr[0].gender);
-      })
-      .catch(err => console.error(err));
-  }
+  // componentDidMount() {
+  //   this.getData();
+  // }
+  // getData() {
+  //   axiosInstance
+  //     .get("/horn")
+  //     .then(res => {
+  //       var len = res.data.length - 1;
+  //       while (res.data[len].arr[0].gender !== 0) {
+  //         len--;
+  //       }
+  //       this.setState({ imgList: res.data[len].arr });
+  //       console.log(res.data[len].arr[0].gender);
+  //     })
+  //     .catch(err => console.error(err));
+  // }
   hot() {
     //Changing it into json to setState for nested object
     let imageList = JSON.parse(JSON.stringify(this.state.imgList));
@@ -210,10 +212,10 @@ class Female extends React.Component {
   render() {
     const final = (
       <div>
-        <h1 className="horn" style={{}}>🎊🎉 Thank You 🎊🎉</h1>
-        <p style={{ fontWeight:'bold',fontSize:'30px',padding:'50px 20px',margin:'auto'}}>The result of the hottest guy and girl will be declared after eveyone votes. Until then sanitize your hands, don't go out and only ghar baithe chill karona 😝.</p>
+        <h1 className="horn" >🎊🎉 Thank You 🎊🎉</h1>
+        <p style={{ fontWeight:'bold',fontSize:'25px',padding:'80px 20px',margin:'auto'}}>The result of the hottest guy and girl will be declared after eveyone votes. Until then sanitize your hands, don't go out and only ghar baithe chill karona 😝.</p>
         <br/>
-        <p style={{fontSize:"40px",textAlign:'center'}}>📢 Go Corona !! Corona Go!!📢</p>
+        <p style={{fontSize:"40px",textAlign:'center'}}>📢 Go Corona !! Corona Go!!📢 😂 😝</p>
       </div>
     );
     const intial = (
