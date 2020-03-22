@@ -25,7 +25,7 @@ import a22 from "../images/males/varun.jpg";
 import a23 from "../images/males/nikhil.jpg";
 
 const axiosInstance = axios.create({
-baseURL: "http://localhost:5000"
+baseURL: "https://try-herok.herokuapp.com"
 });
 
 class Male extends React.Component {
