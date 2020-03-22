@@ -23,6 +23,20 @@ import a20 from "../images/males/sparsh.jpg";
 import a21 from "../images/males/sujay.jpg";
 import a22 from "../images/males/varun.jpg";
 import a23 from "../images/males/nikhil.jpg";
+import { faFireAlt, faTimes } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { createMuiTheme, MuiThemeProvider } from "@material-ui/core/styles";
+import purple from "@material-ui/core/colors/purple";
+// import { spacing } from '@material-ui/system';
+
+const theme = createMuiTheme({
+  palette: {
+    primary: purple,
+    secondary: {
+      main: "#ff4d39"
+    }
+  }
+});
 
 const axiosInstance = axios.create({
 baseURL: "https://try-herok.herokuapp.com"
@@ -229,34 +243,66 @@ class Male extends React.Component {
   render() {
     const final = (
       <div>
-        <h1>Thank You</h1>
+        <h1 className="horn" style={{}}>🎊🎉 Thank You 🎊🎉</h1>
+        <p style={{ fontWeight:'bold',fontSize:'30px',padding:'50px 20px',margin:'auto'}}>The result of the hottest guy and girl will be declared after eveyone votes. Until then sanitize your hands, don't go out and only ghar baithe chill karona 😝.</p>
+        <br/>
+        <p style={{fontSize:"40px",textAlign:'center'}}>📢 Go Corona !! Corona Go!!📢</p>
       </div>
     );
     const intial = (
       <div>
-        <h1>Male</h1>
-        <img src={this.state.imgList[this.state.index].id} alt="" />
-        <Button
-          className="button"
-          size="large"
-          variant="contained"
-          color="secondary"
-          onClick={this.hot}
-        >
-          Hot
-        </Button>
-        <Button
-          className="button"
-          size="large"
-          variant="contained"
-          color="secondary"
-          onClick={this.not}
-        >
-          Not
-        </Button>
+        <MuiThemeProvider theme={theme}>
+          <h1 className="horn" style={{ textAlign:"center"}}>Male  🕺🏾 </h1>
+          <img
+            src={this.state.imgList[this.state.index].id}
+            alt=""
+            style={{ width: "100% ", height: "50%", paddingTop: "20px" }}
+          />
+          <div>
+            <Button
+              // className="button"
+              size="large"
+              variant="contained"
+              color="secondary"
+              onClick={this.hot}
+              style={{
+                fontSize: "30px",
+                borderRadius: "100px",
+                textTransform: "capitalize",
+                position:'absolute',
+                left:'8%',
+                bottom:"10%",
+                paddingLeft :'35px'
+              }}
+            >
+              Hot 🔥
+              {/* < FontAwesomeIcon icon={faFireAlt} /> */}
+            </Button>
+            {/* <div style={{ paddingLeft: "50%" }}> */}
+              <Button
+                // className="button"
+                size="large"
+                variant="contained"
+                color="secondary"
+                onClick={this.not}
+                style={{
+                  fontSize: "30px",
+                  borderRadius: "100px",
+                  textTransform: "capitalize",
+                  paddingLeft: "30px",
+                  position: 'absolute',
+                  right:'8%',
+                  bottom: '10%'
+                }}
+              >
+                Not ❌{/* < FontAwesomeIcon icon={faTimes}/> */}
+              </Button>
+            {/* </div> */}
+          </div>
+        </MuiThemeProvider>
       </div>
     );
-    return <div>{this.state.end ? final : intial}</div>;
+    return <div>{this.state.end? final : intial}</div>;
   }
 }
 
