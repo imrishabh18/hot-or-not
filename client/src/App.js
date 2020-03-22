@@ -4,11 +4,8 @@ import './App.css';
 import axios from 'axios';
 
 class App extends React.Component{
-  constructor(){
-    super();
-  }
     display(){
-      axios.get("/horn")
+      axios.get("https://try-herok.herokuapp.com/horn")
         .then(res => {
           console.log(res.data);
         })
