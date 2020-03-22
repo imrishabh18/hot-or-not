@@ -195,21 +195,21 @@ class Male extends React.Component {
       ]
     };
   }
-  // componentDidMount(){
-  //   this.getData();
-  // }
-  // getData(){
-  //   axiosInstance.get('/horn')
-  //     .then(res => {
-  //       var len = res.data.length-1;
-  //       while(res.data[len].arr[0].gender !== 1){
-  //           len--;
-  //       }
-  //       this.setState({ imgList: res.data[len].arr})
-  //       console.log(res.data[len].arr[0].gender)
-  //     })
-  //     .catch(err => console.error(err))
-  // }
+  componentDidMount(){
+    this.getData();
+  }
+  getData(){
+    axiosInstance.get('/horn')
+      .then(res => {
+        var len = res.data.length-1;
+        while(res.data[len].arr[0].gender !== 1){
+            len--;
+        }
+        this.setState({ imgList: res.data[len].arr})
+        console.log(res.data[len].arr[0].gender)
+      })
+      .catch(err => console.error(err))
+  }
   hot() {
     //Changing it into json to setState for nested object
     let imageList = JSON.parse(JSON.stringify(this.state.imgList));
