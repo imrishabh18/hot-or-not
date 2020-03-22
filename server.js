@@ -42,5 +42,5 @@ app.post("/horn", (req, res) => {
 });
 
 app.get("/horn", (req, res) => {
-  horn.find().then(likes => res.json(likes));
+  horn.find().then(likes => res.json(likes))
 });
