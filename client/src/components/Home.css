@@ -1,0 +1,19 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.window{
+    width: 390px;
+    height: 100vh;
+    margin: auto;
+    background-color: #b00020;
+}
+.horn{
+    text-align: center;
+    padding: 20px;
+    /* color: ; */
+}
+/* .button{
+    text-align: center;
+    margin: auto;
+} */
