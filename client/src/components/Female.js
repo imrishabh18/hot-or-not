@@ -35,7 +35,7 @@ const theme = createMuiTheme({
 });
 
 const axiosInstance = axios.create({
-  baseURL: "https://try-herok.herokuapp.com"
+  baseURL: "https://hot-or-not1.herokuapp.com"
 });
 
 class Female extends React.Component {
