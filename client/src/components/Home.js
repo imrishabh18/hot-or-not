@@ -55,7 +55,7 @@ class Home extends React.Component {
                 <p style={{ paddingLeft: '35px'}}> 👩🏾</p>
               </Button>
             {/* </Grid> */}
-            <p style={{paddingTop: '170px'}}>© Copyright by Rishabh Gupta 😎</p>
+            <p style={{paddingTop: '170px'}}> Made with ❤️ by Rishabh Gupta 😎</p>
             </div>
           </div>
         </Box>
